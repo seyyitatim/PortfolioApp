@@ -1,0 +1,77 @@
+<div style="margin-top:30px">
+  <div class="card" style="margin-top: 5px;">
+    <div class="card-header">
+      Döviz Alış
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="buyCurrency()">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-1">
+              <label for="code" class="col-form-label">Döviz</label>
+            </div>
+            <div class="col-auto">
+              <select class="form-control" [(ngModel)]="selectedBuyingCurrencyCode" name="selectedBuyingCurrencyCode" required>
+                <option selected value="">Bir Adet Döviz Cinsi Seçiniz</option>
+                <option value="{{currencyCode.code}}" *ngFor="let currencyCode of currencies">{{currencyCode.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 5px;">
+            <div class="col-1">
+              <label for="buyingAmount" class="col-form-label" >Miktar</label>
+            </div>
+            <div class="col-auto">
+              <input type="number" class="form-control" [(ngModel)]="buyingAmount" name="buyingAmount"  required>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 5px;">
+            <div class="offset-1">
+              <button type="submit" class="btn btn-primary">Al</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 5px;">
+    <div class="card-header">
+      Döviz Satış
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="sellCurrency()">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-1">
+              <label for="code" class="col-form-label">Döviz</label>
+            </div>
+            <div class="col-auto">
+              <select class="form-control" [(ngModel)]="selectedSellingCurrencyCode" name="currencyCode" required>
+                <option selected value="">Bir Adet Döviz Cinsi Seçiniz</option>
+                <option value="{{currencyCode.code}}" *ngFor="let currencyCode of salableCurrencies">{{currencyCode.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 5px;">
+            <div class="col-1">
+              <label for="amount" class="col-form-label" >Miktar</label>
+            </div>
+            <div class="col-auto">
+              <input type="number" class="form-control" [(ngModel)]="sellingAmount" name="buyingAmount"  required>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 5px;">
+            <div class="offset-1">
+              <button type="submit" class="btn btn-primary">Al</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div style="margin-top: 5px;">
+    <button type="submit" (click)="reset()" class="btn btn-primary">Sıfırla</button>
+  </div>
+</div>

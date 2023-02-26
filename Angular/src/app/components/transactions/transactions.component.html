@@ -1,0 +1,22 @@
+<hr>
+<h2>İşlemler</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Alınan Döviz</th>
+      <th scope="col">Satılan Döviz</th>
+      <th scope="col">Kur</th>
+      <th scope="col">Miktar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transation of transactions">
+      <td>{{transation.date | date}}</td>
+      <td>{{transation.buyCurrencyCode}}</td>
+      <td>{{transation.sellCurrencyCode}}</td>
+      <td>{{transation.rate}}</td>
+      <td>{{transation.amount}}</td>
+    </tr>
+  </tbody>
+</table>

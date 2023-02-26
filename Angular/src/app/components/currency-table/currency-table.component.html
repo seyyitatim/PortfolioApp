@@ -1,0 +1,17 @@
+<h2>Güncel Kur</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Kur</th>
+      <th scope="col">Alış Fiyatı</th>
+      <th scope="col">Satış Fiyatı</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let currency of currencies">
+      <td>{{currency.currencyName}}</td>
+      <td>{{currency.buyingRate}}</td>
+      <td>{{currency.sellingRate}}</td>
+    </tr>
+  </tbody>
+</table>
